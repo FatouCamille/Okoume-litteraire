@@ -3,7 +3,7 @@ const romans = [
     { 
         title: "Malédiction", 
         author: "Sylvie Ntsame", 
-        cat: "Drame"/"Mysticisme" , 
+        cat: "Drame" , 
         img: "malédiction.png",
         date: "2005",
         description: "Le roman raconte l’histoire d’une famille frappée par une malédiction qui semble se transmettre de génération en génération. Tout commence par des événements étranges : maladies inexpliquées, morts soudaines, échecs répétés… Peu à peu, les personnages réalisent que ces malheurs ne sont pas le fruit du hasard..",
@@ -1552,9 +1552,7 @@ const romans = [
 
 ];
 
-// ==========================================
-// 1. CONFIGURATION DE L'ANIMATION (ScrollReveal)
-// ==========================================
+
 const sr = ScrollReveal({
     origin: 'bottom',
     distance: '30px',
@@ -1567,9 +1565,7 @@ sr.reveal('.site-logo', {});
 sr.reveal('.hero h1', { delay: 400 });
 sr.reveal('.intro', { delay: 600 });
 
-// ==========================================
-// 2. BARRE DE PROGRESSION DE LECTURE
-// ==========================================
+
 window.onscroll = function() {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1578,9 +1574,7 @@ window.onscroll = function() {
     if (progressBar) progressBar.style.width = scrolled + "%";
 };
 
-// ==========================================
-// 3. FONCTION D'AFFICHAGE DES CARTES
-// ==========================================
+
 function displayBooks(books) {
     const grid = document.getElementById('booksGrid');
     if (!grid) return;
@@ -1619,9 +1613,7 @@ function displayBooks(books) {
     sr.reveal('.book-card', { interval: 100 }); 
 }
 
-// ==========================================
-// 4. FONCTION POUR OUVRIR LA MODALE
-// ==========================================
+
 function openModal(book) {
     const modal = document.getElementById('bookModal');
     if (!modal) return;
@@ -1666,9 +1658,7 @@ function openModal(book) {
     document.body.style.overflow = 'hidden';
 }
 
-// ==========================================
-// 5. FONCTION POUR FERMER LA MODALE
-// ==========================================
+
 function closeModal() {
     const modal = document.getElementById('bookModal');
     if (modal) {
@@ -1684,9 +1674,7 @@ window.onclick = function(event) {
     }
 }
 
-// ==========================================
-// 6. RECHERCHE ET FILTRES
-// ==========================================
+
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
@@ -1713,9 +1701,7 @@ function filterCategory(category) {
     }
 }
 
-// ==========================================
-// 7. LA MAGIE DU TIRAGE AU SORT (Coup de cœur)
-// ==========================================
+
 const randomBtn = document.getElementById('randomBtn');
 
 if (randomBtn) {
@@ -1729,9 +1715,7 @@ if (randomBtn) {
     });
 }
 
-// ==========================================
-// 8. INITIALISATION
-// ==========================================
+
 window.onload = () => {
     displayBooks(romans);
 };
